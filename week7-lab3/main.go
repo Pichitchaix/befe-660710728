@@ -26,8 +26,14 @@ var err error
 	password := getEnv("DB_PASSWORD","")
 	port := getEnv("DB_PORT","")
 
+	fmt.Println("DB_HOST:", host)
+	fmt.Println("DB_PORT:", port)
+	fmt.Println("DB_USER:", user)
+	fmt.Println("DB_PASSWORD:", password)
+	fmt.Println("DB_NAME:", name)
+
 	conSt :=fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=disable ", host, port, user ,password ,name )
-	// fmt.Println(conSt)
+	fmt.Println(conSt)
 	db,err = sql.Open("postgres",conSt)
 	if err != nil {
 		log.Fatal("failed to open database",err)

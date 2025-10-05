@@ -1,3 +1,4 @@
+# check=skip=LegacyKeyValueFormat
 # Dockerfile
 FROM postgres:17-alpine
 
